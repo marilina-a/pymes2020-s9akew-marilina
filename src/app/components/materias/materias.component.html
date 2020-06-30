@@ -1,0 +1,92 @@
+<div class="container">
+ 
+  <div *ngIf="EstadoForm == 'L'">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th class="text-center">Id</th>
+          <th class="text-center">Año</th>
+          <th class="text-center">Nombre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of Items">
+          <td>{{item.IdMateria}}</td>
+          <td>{{item.MateriaAnio}}</td>
+          <td>{{item.MateriaNombre}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <input name="" id=""  class="btn btn-success" type = "button"  value= "Alta"(click) = 'Alta()'>
+ 
+</div>
+
+
+    <div *ngIf="EstadoForm == 'A'">
+      <h3>Registrar Materia</h3>
+      <form name="FormReg" [formGroup]='FormReg' *ngIf="AccionABMC != 'L'" class="bg-light">
+ 
+  <fieldset [disabled]="AccionABMC==='C'">
+    <!--PresupuestoDescripcion-->
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2 col-sm-offset-2" for="PresupuestoDescripcion">Descripcion <span
+                    class="text-danger">*</span></label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" formControlName="PresupuestoDescripcion" 
+         [ngClass]="{'is-invalid': (FormReg.controls.PresupuestoDescripcion.touched || submitted)  
+            && FormReg.controls.PresupuestoDescripcion.errors}" />
+ 
+        <span class="text-danger" *ngIf="(FormReg.controls.PresupuestoDescripcion.touched || submitted) 
+                        && FormReg.controls.PresupuestoDescripcion.errors?.required">
+                    Dato requerido.
+                </span>
+                <span class="text-danger" *ngIf="(FormReg.controls.PresupuestoDescripcion.touched || submitted) 
+                       && (FormReg.controls.PresupuestoDescripcion.errors?.minlength || FormReg.controls.PresupuestoDescripcion.errors?.maxlength) ">
+                    Dato texto de 4 a 50 caracteres.
+                </span>
+                
+      </div>
+    </div>
+ 
+    <!--PresupuestoImporte-->
+    <div class="row form-group">
+      <label class="col-form-label col-sm-2 col-sm-offset-2" for="PresupuestoImporte">Importe <span
+                    class="text-danger">*</span></label>
+      <div class="col-sm-6">
+        <input type="text" name="PresupuestoImporte" class="form-control" formControlName="PresupuestoImporte"
+            [ngClass]="{'is-invalid': (FormReg.controls.PresupuestoImporte.touched || submitted)  
+            && FormReg.controls.PresupuestoImporte.errors}" />
+        <span class="text-danger" *ngIf="(FormReg.controls.PresupuestoImporte.touched || submitted) 
+                       && FormReg.controls.PresupuestoImporte.errors?.required">
+                    Dato requerido.
+                </span>
+        <span class="text-danger" *ngIf="(FormReg.controls.PresupuestoImporte.touched || submitted) 
+               && FormReg.controls.PresupuestoImporte.errors?.pattern">
+                    Dato numérico, 1 a 7 dígitos.
+                </span>
+      </div>
+    </div>
+ 
+  </fieldset>
+ 
+  <!-- Botones Grabar, Cancelar/Volver' -->
+  <div class="row justify-content-center">
+    <button type="button" *ngIf="AccionABMC!=='C'" class="btn btn-primary" (click)="Grabar()">
+            <span class="fas fa-check"></span> Aceptar
+        </button>
+    &nbsp;
+    <button type="button" class="btn btn-warning" (click)="Volver()">
+            <span class="fas fa-undo"></span> {{AccionABMC=='C' ? 'Volver' : 'Cancelar'}}
+        </button>
+  </div>
+ 
+  <!--texto: Revisar los datos ingresados...-->
+  <div id="divMsjFormRegistro" *ngIf="submitted && FormReg.invalid" class="row alert alert-danger">
+    <span class="fas fa-exclamation-sign"></span>{{Mensajes['RD']}}
+  </div>
+ 
+</form>
+    </div>
+ 
+ 
+  </div>
