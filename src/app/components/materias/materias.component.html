@@ -27,41 +27,41 @@
       <form name="FormReg" [formGroup]='FormReg' *ngIf="AccionABMC != 'L'" class="bg-light">
  
   <fieldset [disabled]="AccionABMC==='C'">
-    <!--PresupuestoDescripcion-->
+    <!--MateriaAño-->
     <div class="form-group row">
-      <label class="col-form-label col-sm-2 col-sm-offset-2" for="PresupuestoDescripcion">Descripcion <span
+      <label class="col-form-label col-sm-2 col-sm-offset-2" for="MateriaAnio">Año<span
                     class="text-danger">*</span></label>
       <div class="col-sm-6">
-        <input type="text" class="form-control" formControlName="PresupuestoDescripcion" 
-         [ngClass]="{'is-invalid': (FormReg.controls.PresupuestoDescripcion.touched || submitted)  
-            && FormReg.controls.PresupuestoDescripcion.errors}" />
+        <input type="text" class="form-control" formControlName="MateriaAnio" 
+         [ngClass]="{'is-invalid': (FormReg.controls.MateriaAnio.touched || submitted)  
+            && FormReg.controls.MateriaAnio.errors}" />
  
-        <span class="text-danger" *ngIf="(FormReg.controls.PresupuestoDescripcion.touched || submitted) 
-                        && FormReg.controls.PresupuestoDescripcion.errors?.required">
+        <span class="text-danger" *ngIf="(FormReg.controls.MateriaAnio.touched || submitted) 
+                        && FormReg.controls.MateriaAnio.errors?.required">
                     Dato requerido.
                 </span>
-                <span class="text-danger" *ngIf="(FormReg.controls.PresupuestoDescripcion.touched || submitted) 
-                       && (FormReg.controls.PresupuestoDescripcion.errors?.minlength || FormReg.controls.PresupuestoDescripcion.errors?.maxlength) ">
+                <span class="text-danger" *ngIf="(FormReg.controls.MateriaAnio.touched || submitted) 
+                       && (FormReg.controls.MateriaAnio.errors?.minlength || FormReg.controls.MateriaAnio.errors?.maxlength) ">
                     Dato texto de 4 a 50 caracteres.
                 </span>
                 
       </div>
     </div>
  
-    <!--PresupuestoImporte-->
+    <!--MateriaNombre-->
     <div class="row form-group">
-      <label class="col-form-label col-sm-2 col-sm-offset-2" for="PresupuestoImporte">Importe <span
+      <label class="col-form-label col-sm-2 col-sm-offset-2" for="MateriaNombre">Nombre <span
                     class="text-danger">*</span></label>
       <div class="col-sm-6">
-        <input type="text" name="PresupuestoImporte" class="form-control" formControlName="PresupuestoImporte"
-            [ngClass]="{'is-invalid': (FormReg.controls.PresupuestoImporte.touched || submitted)  
-            && FormReg.controls.PresupuestoImporte.errors}" />
-        <span class="text-danger" *ngIf="(FormReg.controls.PresupuestoImporte.touched || submitted) 
-                       && FormReg.controls.PresupuestoImporte.errors?.required">
+        <input type="text" name="MateriaNombre" class="form-control" formControlName="MateriaNombre"
+            [ngClass]="{'is-invalid': (FormReg.controls.MateriaNombre.touched || submitted)  
+            && FormReg.controls.MateriaNombre.errors}" />
+        <span class="text-danger" *ngIf="(FormReg.controls.MateriaNombre.touched || submitted) 
+                       && FormReg.controls.MateriaNombre.errors?.required">
                     Dato requerido.
                 </span>
-        <span class="text-danger" *ngIf="(FormReg.controls.PresupuestoImporte.touched || submitted) 
-               && FormReg.controls.PresupuestoImporte.errors?.pattern">
+        <span class="text-danger" *ngIf="(FormReg.controls.MateriaNombre.touched || submitted) 
+               && FormReg.controls.MateriaNombre.errors?.pattern">
                     Dato numérico, 1 a 7 dígitos.
                 </span>
       </div>
