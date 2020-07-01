@@ -6,11 +6,12 @@ import {
   HttpParams
 } from "@angular/common/http";
 import { of } from "rxjs";
-import { Contrato } from "../models/contrato"
+import { Contrato } from "../models/contrato";
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ContratosService {
 resourceUrl: string;
   constructor(private httpCliente: HttpClient) { 
@@ -23,5 +24,7 @@ resourceUrl: string;
   post(obj:Contrato) {
     return this.httpCliente.post(this.resourceUrl, obj);
   }
-
+delete(Id){
+    return this.httpCliente.delete(this.resourceUrl + Id);
+  }
 }

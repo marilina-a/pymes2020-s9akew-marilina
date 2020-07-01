@@ -17,7 +17,7 @@ Titulo = "Contratos";
 
   submitted = false;
 
-  constructor(private contratosService: ContratosService, private formBuilder: FormBuilder) { }
+  constructor(private contratosService: ContratosService, private formBuilder: FormBuilder,) { }
 ngOnInit() {
         this.EstadoForm = 'L';
         this.submitted = false;
@@ -62,7 +62,16 @@ ngOnInit() {
 
      });
     }
-  
+ 
+ Eliminar(IdContrato){
+    this.contratosService.delete(IdContrato).subscribe((res: string) =>{
+      this.Volver();
+      this.getContrato();
+      window.alert("registro eliminado");
+    });
+  }
+
+
 
   Volver() {
     this.EstadoForm = "L";

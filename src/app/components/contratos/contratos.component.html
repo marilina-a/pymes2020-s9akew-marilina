@@ -7,6 +7,8 @@
 					<th class="text-center">Id</th>
 					<th class="text-center">Descripcion</th>
 					<th class="text-center">Importe</th>
+          <th class="text-center">ABM</th>
+  
 				</tr>
 			</thead>
 			<tbody>
@@ -14,6 +16,14 @@
 					<td>{{item.IdContrato}}</td>
 					<td>{{item.ContratoDescripcion}}</td>
 					<td>{{item.ContratoImporte}}</td>
+          <td>
+						<button type="button" class="btn btn-sm btn-outline-primary" title="Modificar" (click)="Modificar(item)">
+                    <span class="fas fa-pencil-alt"></span>
+                </button>
+						<button type="button" class="btn btn-sm btn-outline-primary" title="Eliminar" (click)="Eliminar(item.IdContrato)">
+                    <span class="fas fa-pencil-alt"></span>
+                </button>
+					</td>
 				</tr>
 			</tbody>
 		</table>
