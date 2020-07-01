@@ -11,19 +11,19 @@ import { Servicio } from "../models/servicio";
 @Injectable({
   providedIn: 'root'
 })
+
 export class ServiciosService {
 resourceUrl: string;
   constructor(private httpCliente: HttpClient) {
      this.resourceUrl = "https://pavii.ddns.net/api/Servicios"
    }
-get(){
+   get(){
      return this.httpCliente.get(this.resourceUrl)
    }
-
-  post(obj:Servicio) {
+   post(obj:Servicio) {
     return this.httpCliente.post(this.resourceUrl, obj);
   }
-delete(Id){
+  delete(Id){
     return this.httpCliente.delete(this.resourceUrl +'/' + Id);
   }
 }

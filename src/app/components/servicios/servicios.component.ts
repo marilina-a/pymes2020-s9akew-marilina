@@ -10,15 +10,14 @@ import { ModalDialogService } from "../../services/modal-dialog.service";
   styleUrls: ['./servicios.component.css']
 })
 export class ServiciosComponent implements OnInit {
-  Titulo = "Servicios";
+ Titulo = "Servicios";
   Items: Servicio[] = [];
   EstadoForm: string;
   FormReg: FormGroup;
 
   submitted = false;
 
-  constructor(private serviciosService: ServiciosService, private formBuilder: FormBuilder,) { }
-
+  constructor(private serviciosService : ServiciosService , private formBuilder: FormBuilder,) { }
 ngOnInit() {
         this.EstadoForm = 'L';
         this.submitted = false;
@@ -56,7 +55,7 @@ ngOnInit() {
     const itemCopy = { ...this.FormReg.value };
 
     // agregar post
-    itemCopy.IdContrato= 0;
+    itemCopy.IdServicio= 0;
     this.serviciosService.post(itemCopy).subscribe((res: any) => {
         this.getServicio();
         this.Volver();
@@ -68,7 +67,7 @@ ngOnInit() {
     this.serviciosService.delete(IdServicio).subscribe((res: string) =>{
       this.Volver();
       this.getServicio();
-      window.alert("registro eliminado");
+      //window.alert("registro eliminado");
     });
   }
 
