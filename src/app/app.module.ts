@@ -23,6 +23,8 @@ import { ArticulosFamilias2Component } from './components/articulos-familias2/ar
 import { MockArticulosFamilias2Service } from './services/mock-articulos-familias2.service';
 import { ContratosComponent } from './components/contratos/contratos.component';
 import { ContratosService } from './services/contratos.service';
+import { ServiciosComponent } from './components/servicios/servicios.component';
+import { ServiciosService } from './services/servicios.service';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { ContratosService } from './services/contratos.service';
     ModalDialogComponent,
     ArticulosFamilias2Component,
     ContratosComponent,
+    ServiciosComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,9 @@ import { ContratosService } from './services/contratos.service';
       { path: 'articulos', component: ArticulosComponent },
       { path: 'articulosfamilias', component: ArticulosFamiliasComponent },
       { path: 'articulosfamilias2', component: ArticulosFamilias2Component },
-      { path: 'contrato', component: ContratosComponent }
+      { path: 'contrato', component: ContratosComponent },
+      { path: 'servicio', component: ServiciosComponent }
+
     ]),
     NgbPaginationModule,
     NgbModalModule,
@@ -53,7 +58,7 @@ import { ContratosService } from './services/contratos.service';
   entryComponents: [ModalDialogComponent],
   providers: [
      {provide: APP_BASE_HREF, useValue : '/' },
-    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true, providers: [MockArticulosFamilias2Service], providers: [MateriasSService], providers: [ContratosService] }
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true, providers: [MockArticulosFamilias2Service], providers: [ContratosService], providers: [ServiciosService] }
   ],
   bootstrap: [AppComponent]
 })
