@@ -21,8 +21,6 @@ import { ArticulosFamiliasComponent } from "./components/articulos-familias/arti
 import { ModalDialogComponent } from "./components/modal-dialog/modal-dialog.component";
 import { ArticulosFamilias2Component } from './components/articulos-familias2/articulos-familias2.component';
 import { MockArticulosFamilias2Service } from './services/mock-articulos-familias2.service';
-import { MateriasComponent } from './components/materias/materias.component';
-import { MateriasSService } from './services/materias-s.service';
 import { ContratosComponent } from './components/contratos/contratos.component';
 import { ContratosService } from './services/contratos.service';
 
@@ -35,7 +33,6 @@ import { ContratosService } from './services/contratos.service';
     ArticulosFamiliasComponent,
     ModalDialogComponent,
     ArticulosFamilias2Component,
-    MateriasComponent,
     ContratosComponent,
   ],
   imports: [
@@ -48,7 +45,6 @@ import { ContratosService } from './services/contratos.service';
       { path: 'articulos', component: ArticulosComponent },
       { path: 'articulosfamilias', component: ArticulosFamiliasComponent },
       { path: 'articulosfamilias2', component: ArticulosFamilias2Component },
-      { path: 'materia', component: MateriasComponent },
       { path: 'contrato', component: ContratosComponent }
     ]),
     NgbPaginationModule,
