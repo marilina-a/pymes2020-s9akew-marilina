@@ -26,4 +26,8 @@ resourceUrl: string;
   delete(Id){
     return this.httpCliente.delete(this.resourceUrl +'/' + Id);
   }
+
+
+
+
 }

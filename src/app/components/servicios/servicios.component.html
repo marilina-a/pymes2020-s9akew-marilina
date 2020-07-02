@@ -7,6 +7,7 @@
 					<th class="text-center">Id</th>
 					<th class="text-center">Nombre</th>
 					<th class="text-center">Importe</th>
+          <th class="text-center">Activo</th>
 					<th class="text-center">ABM</th>
 
 				</tr>
@@ -16,6 +17,7 @@
 					<td>{{item.IdServicio}}</td>
 					<td>{{item.ServicioNombre}}</td>
 					<td>{{item.ServicioImporte}}</td>
+          <td>{{item.Activo ? 'SI' : 'NO'}}</td>
 					<td>
 						<button type="button" class="btn btn-sm btn-outline-primary" title="Modificar" (click)="Modificar(item)">
                     <span class="fas fa-pencil-alt"></span>
@@ -24,6 +26,10 @@
                     <span class="fas fa-trash-alt"></span>
 
                 </button>
+                <button type="button" class="btn btn-sm btn-outline-{{ item.Activo ? 'danger':'success'}}"
+                            title="{{item.Activo ? 'Desactivar':'Activar'}}" (click)="bajaLogica(item)">
+                        <span class="fas fa-{{item.Activo ? 'times':'check'}}"></span>
+                    </button>
 					</td>
 				</tr>
 			</tbody>

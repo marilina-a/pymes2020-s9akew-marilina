@@ -79,6 +79,15 @@ ngOnInit() {
 
   };
 
+  bajaLogica(ObjServicio){
+    if (ObjServicio.Activo == true){
+      ObjServicio.Activo = false;
+    }
+    else{
+      ObjServicio.Activo=true;
+    }
+    /this.getServicio();
+  }
 
 
 }
